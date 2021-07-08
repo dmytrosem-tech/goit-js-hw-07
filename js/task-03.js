@@ -13,13 +13,33 @@ const images = [
   },
 ];
 
-const gallery = document.querySelector("#gallery");
+// const gallery = document.querySelector("#gallery");
 
 
-const image1 = `<img src=${images[0].url} alt="${images[0].alt}" class="gallery__item"`;
-const image2 = `<img src=${images[1].url} alt="${images[1].alt}" class="gallery__item"`;
-const image3 = `<img src=${images[2].url} alt="${images[2].alt}" class="gallery__item"`;
+// const image1 = `<img src=${images[0].url} alt="${images[0].alt}" class="gallery__item"`;
+// const image2 = `<img src=${images[1].url} alt="${images[1].alt}" class="gallery__item"`;
+// const image3 = `<img src=${images[2].url} alt="${images[2].alt}" class="gallery__item"`;
 
-gallery.insertAdjacentHTML("afterbegin", `<li>${image1}</li><li>${image2}</li><li>${image3}</li>`);
-console.log(gallery);
-// `строка текста`
+// gallery.insertAdjacentHTML("afterbegin", `<li>${image1}</li><li>${image2}</li><li>${image3}</li>`);
+
+
+
+
+const galleryList = document.querySelector('#gallery');
+galleryList.classList.add('grid', 'gallery');
+
+const makingGallery = ({url , alt}) => {
+  return  `<li><img src= ${url} alt='${alt}'></li>`
+};
+
+const importGallery = images.map(makingGallery).join('');
+
+galleryList.insertAdjacentHTML("beforeend", importGallery);
+console.log(galleryList);
+
+// Вешаем классы для стилизации----->
+const galleryItemsEls = galleryList.querySelectorAll('li')
+galleryItemsEls.forEach(gallery => gallery.classList.add('gallery__item', 'grid__item'));
+
+const galleryImgEls = galleryList.querySelectorAll('img');
+galleryImgEls.forEach(img => img.classList.add('gallery__img'));
