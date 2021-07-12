@@ -49,13 +49,8 @@ function onDestrBtnClick(event) {
 }
 
 function destroyBoxes() {
-  //  refs.boxesRef.children.remove(); / ТУТ ДОЛЖНО ОТРАБОТАТЬ - НО НЕТ((
-  console.log(refs.boxesRef.children);
-  divArr.splice(0, 1);
-  console.log(divArr);
-  refs.boxesRef.append(...divArr);
+   refs.boxesRef.innerHTML = ''; 
 }
-
 
 // Тут вынимаем значение инпута при вводе, ----------------------------------->
 function onValueChange(event) {
