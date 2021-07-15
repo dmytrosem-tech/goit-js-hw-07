@@ -42,6 +42,7 @@ function createBoxes(amount) {
   }
   refs.boxesRef.append(...divArr)
   console.log(divArr)
+  refs.inputRef.value = ''
 }
 
 // Теперь функции очищения родительского элемента от того что мы наваяли-------->
@@ -52,6 +53,7 @@ function onDestrBtnClick(event) {
 function destroyBoxes() {
   refs.boxesRef.innerHTML = ''
   divArr = []
+  refs.inputRef.value = ''
 }
 
 // Тут вынимаем значение инпута при вводе, ----------------------------------->
