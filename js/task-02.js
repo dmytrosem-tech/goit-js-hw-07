@@ -8,12 +8,20 @@ const ingredients = ['Картошка', 'Грибы', 'Чеснок', 'Поми
 //   elArr.push(ingredientEl)
 // })
 
-const elsArr = ingredients.map(ingredient => {
-  const el = document.createElement('li')
-  el.textContent = ingredient
-  return el
-})
+// const elsArr = ingredients.map(ingredient => {
+//   const el = document.createElement('li')
+//   el.textContent = ingredient
+//   return el
+// })
 
-// Добавляем массив лишек в DOM----------------------------------->
-const parentEl = document.querySelector('#ingredients')
-parentEl.append(...elsArr)
+// // Добавляем массив лишек в DOM----------------------------------->
+// const parentEl = document.querySelector('#ingredients')
+// parentEl.append(...elsArr)
+const ingredientsList = document.querySelector('#ingredients')
+const element = ingredients.map(option => {
+  const ingredientsListElement = document.createElement('li')
+  ingredientsListElement.textContent = option
+  console.log(ingredientsListElement)
+  return ingredientsListElement
+})
+ingredientsList.append(...element)
